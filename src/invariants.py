@@ -1,5 +1,5 @@
 import networkx as nx
-
+import math
 def wiener_index(G):
 
     total = 0
