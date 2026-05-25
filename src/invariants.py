@@ -12,3 +12,18 @@ def wiener_index(G):
             total += lengths[v]
 
     return total // 2
+
+    import math
+
+def sombor_index(G):
+
+    total = 0
+
+    for u, v in G.edges():
+
+        du = G.degree(u)
+        dv = G.degree(v)
+
+        total += math.sqrt(du**2 + dv**2)
+
+    return total
