@@ -1,27 +1,23 @@
 from src.generator import generate_trees
 
-from src.invariants import (
-    wiener_index,
-    sombor_index,
-    zagreb_index
-)
+from src.analysis import extremal_wiener
 
 trees = generate_trees(5)
 
-print("Number of non-isomorphic trees:", len(trees))
+result = extremal_wiener(trees)
 
-for i, tree in enumerate(trees):
+print("MAXIMUM WIENER INDEX")
+print("---------------------")
 
-    w = wiener_index(tree)
-    s = sombor_index(tree)
-    z = zagreb_index(tree)
+print("Value:", result["max_value"])
 
-    print(f"\nTree {i+1}")
+print("Edges:", list(result["max_tree"].edges()))
 
-    print("Edges:", list(tree.edges()))
+print()
 
-    print("Wiener Index:", w)
+print("MINIMUM WIENER INDEX")
+print("---------------------")
 
-    print("Sombor Index:", round(s, 4))
+print("Value:", result["min_value"])
 
-    print("Zagreb Index:", z)
+print("Edges:", list(result["min_tree"].edges()))

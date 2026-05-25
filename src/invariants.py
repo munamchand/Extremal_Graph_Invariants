@@ -1,5 +1,7 @@
 import networkx as nx
 import math
+
+
 def wiener_index(G):
 
     total = 0
@@ -13,7 +15,6 @@ def wiener_index(G):
 
     return total // 2
 
-    import math
 
 def sombor_index(G):
 
@@ -27,5 +28,8 @@ def sombor_index(G):
         total += math.sqrt(du**2 + dv**2)
 
     return total
-    def zagreb_index(G):
+
+
+def zagreb_index(G):
+
     return sum(deg**2 for node, deg in G.degree())
