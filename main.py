@@ -1,11 +1,16 @@
-print("This is Munam")       
-print("This is the Sombor Index Calculator")
-print("Hello World")
-print("This is the Sombor Index Calculator")
-print("Hello World")
-import networkx as nx
+from src.generator import generate_trees
+from src.invariants import wiener_index
 
-G = nx.path_graph(5)
+trees = generate_trees(5)
 
-print("Vertices:", G.number_of_nodes())
-print("Edges:", G.number_of_edges())
+print("Number of non-isomorphic trees:", len(trees))
+
+for i, tree in enumerate(trees):
+
+    w = wiener_index(tree)
+
+    print(f"\nTree {i+1}")
+
+    print("Edges:", list(tree.edges()))
+
+    print("Wiener Index:", w)
