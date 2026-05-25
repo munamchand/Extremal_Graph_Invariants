@@ -1,4 +1,4 @@
- from src.invariants import (
+from src.invariants import (
     wiener_index,
     sombor_index,
     zagreb_index
