@@ -1,0 +1,5 @@
+print("This is Munam")       
+print("This is the Sombor Index Calculator")
+print("Hello World")
+print("This is the Sombor Index Calculator")
+print("Hello World")
