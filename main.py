@@ -53,3 +53,9 @@ df = pd.DataFrame(data)
 df.to_csv("wiener_results.csv", index=False)
 
 print("Results saved to wiener_results.csv")
+draw_graph(max_tree,
+           "Maximum Wiener Tree",
+           "outputs/figures/max_wiener.png")
+draw_graph(min_tree,
+           "Minimum Wiener Tree",                                           
+              "outputs/figures/min_wiener.png")
