@@ -19,13 +19,12 @@ We study how different tree structures affect these indices and identify trees t
 ---
 
 ## Project Structure
-generator.py        → Tree generation\\
-invariants.py       → Graph invariant definitions\\
-analysis.py         → Extremal analysis (max/min)\\
-visualization.py    → Graph drawing utilities\\
-main.py             → Main execution pipeline
 
-
+- generator.py        → Tree generation
+- invariants.py       → Graph invariant definitions
+- analysis.py         → Extremal analysis (max/min)
+- visualization.py    → Graph drawing utilities
+- main.py             → Main execution pipeline
 
 ---
 
