@@ -7,7 +7,7 @@ The project performs **systematic extremal analysis (maximum and minimum values)
 
 # 📌 Research Objective
 
-For each tree order \( n \in [3, 10] \), the system:
+For each tree order \( n $$\in$$ [3, 10] \), the system:
 
 - Generates all non-isomorphic trees
 - Computes graph invariants:
@@ -186,6 +186,5 @@ This project enables:
 This repository is designed as a **computational graph theory framework** suitable for:
 
 - Research exploration
-- PhD applications
 - Experimental combinatorics
 - Chemical graph theory modeling
