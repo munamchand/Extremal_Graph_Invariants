@@ -4,7 +4,7 @@ import os
 
 os.makedirs("outputs/figures", exist_ok=True)
 
-n_values = range(3, 11)
+n_values = range(4, 11)
 
 results, trees = run_experiment(n_values)
 

@@ -1,4 +1,4 @@
-
+from src.invariants import wiener_index, sombor_index, zagreb_index
 def extremal_invariant(trees, invariant_fn):
     max_tree = None
     min_tree = None

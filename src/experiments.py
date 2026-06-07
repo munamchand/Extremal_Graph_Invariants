@@ -1,16 +1,17 @@
 import pandas as pd
+
 from src.generator import generate_trees
 from src.analysis import extremal_invariant
 from src.invariants import wiener_index, sombor_index, zagreb_index
-
-
 def run_experiment(n_values):
 
     results = []
     tree_store = {}
 
     for n in n_values:
-    
+
+        print("Processing n =", n)
+
         trees = generate_trees(n)
 
         w = extremal_invariant(trees, wiener_index)
