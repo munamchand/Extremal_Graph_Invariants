@@ -1,14 +1,11 @@
-
-
-
-from experiments import run_experiment
+from src.experiments import run_experiment
 import os
 
 os.makedirs("outputs/csv", exist_ok=True)
 
 def main():
 
-    n_values = list(range(3, 11))  # n = 3 to 10
+    n_values = list(range(3, 11))  # for n = 3 to 10.
 
     df = run_experiment(n_values)
 
