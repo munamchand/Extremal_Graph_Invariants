@@ -25,15 +25,6 @@ print("Value:", result["min_value"])
 
 print("Edges:", list(result["min_tree"].edges()))
 
-draw_graph(
-    result["max_tree"],
-    title="Maximum Wiener Index Tree"
-)
-
-draw_graph(
-    result["min_tree"],
-    title="Minimum Wiener Index Tree"
-)
 
 data = [
     {
@@ -50,3 +41,15 @@ data = [
 
 df = pd.DataFrame(data)
 df.to_csv("outputs/csv/wiener_results.csv", index=False)
+
+draw_graph(
+    result["max_tree"],
+    "Maximum Wiener Tree",
+    "outputs/figures/max_wiener_tree.png"
+)
+
+draw_graph(
+    result["min_tree"],
+    "Minimum Wiener Tree",
+    "outputs/figures/min_wiener_tree.png"
+)

@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 
 
-def draw_graph(G, title="Graph"):
+def draw_graph(G, title="Graph", filename=None):
 
     plt.figure(figsize=(10, 10))
     pos = nx.spring_layout(G)
@@ -15,6 +15,12 @@ def draw_graph(G, title="Graph"):
         node_size=700
     )
 
-    plt.title(title)
-
+    if filename:
+        plt.savefig(filename)
     plt.show()
+    
+    
+
+    
+
+   
