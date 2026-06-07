@@ -32,7 +32,7 @@ We study how different tree structures affect these indices and identify trees t
 For a graph \(G\):
 
 - Wiener Index:
-  \( W(G) = \sum d(u,v) \)
+  $$\( W(G) = \sum d(u,v) \)$$
 
 - First Zagreb Index:
   \( M_1(G) = \sum d(v)^2 \)
@@ -41,7 +41,9 @@ For a graph \(G\):
   \( M_2(G) = \sum d(u)d(v) \)
 
 - Sombor Index:
-  \( SO(G) = \sum \sqrt{d(u)^2 + d(v)^2} \)
+  $$
+SO(G) = \sum_{uv \in E(G)} \sqrt{d(u)^2 + d(v)^2}
+$$
 
 ---
 
