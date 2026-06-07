@@ -2,36 +2,48 @@ from src.experiments import run_experiment
 from src.visualization import draw_graph
 import os
 
-os.makedirs("outputs/csv", exist_ok=True)
+os.makedirs("outputs/figures", exist_ok=True)
 
-def main():
+n_values = range(3, 11)
 
-    n_values = list(range(3, 11))  # for n = 3 to 10.
+results, trees = run_experiment(n_values)
 
-    df = run_experiment(n_values)
+for n in n_values:
 
-    print(df)
+    t = trees[n]
 
-    df.to_csv("outputs/csv/invariant_growth.csv", index=False)
+    draw_graph(
+        t["wiener_max_tree"],
+        f"Wiener Max (n={n})",
+        f"outputs/figures/wiener_max_n{n}.png"
+    )
 
-    print("Saved: outputs/csv/invariant_growth.csv")
+    draw_graph(
+        t["wiener_min_tree"],
+        f"Wiener Min (n={n})",
+        f"outputs/figures/wiener_min_n{n}.png"
+    )
 
+    draw_graph(
+        t["sombor_max_tree"],
+        f"Sombor Max (n={n})",
+        f"outputs/figures/sombor_max_n{n}.png"
+    )
 
-if __name__ == "__main__":
-    main()
+    draw_graph(
+        t["sombor_min_tree"],
+        f"Sombor Min (n={n})",
+        f"outputs/figures/sombor_min_n{n}.png"
+    )
 
-# Draw Graphs
-result = run_experiment(range(3, 11))
+    draw_graph(
+        t["zagreb_max_tree"],
+        f"Zagreb Max (n={n})",
+        f"outputs/figures/zagreb_max_n{n}.png"
+    )
 
-trees = generate_trees(10)
-
-draw_graph(
-    trees[0],
-    "Example Tree",
-    "outputs/figures/example.png"
-)
-
-
-
-
-
+    draw_graph(
+        t["zagreb_min_tree"],
+        f"Zagreb Min (n={n})",
+        f"outputs/figures/zagreb_min_n{n}.png"
+    )
