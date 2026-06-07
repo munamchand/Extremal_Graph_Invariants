@@ -1,5 +1,5 @@
 from src.experiments import run_experiment
-from src.visualition import draw_graph
+from src.visualization import draw_graph
 import os
 
 os.makedirs("outputs/csv", exist_ok=True)
