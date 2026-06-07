@@ -49,5 +49,4 @@ data = [
 ]
 
 df = pd.DataFrame(data)
-
-df.to_csv("wiener_results.csv", index=False)
+df.to_csv("outputs/csv/wiener_results.csv", index=False)
