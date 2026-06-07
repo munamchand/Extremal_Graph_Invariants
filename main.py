@@ -3,6 +3,7 @@ from src.generator import generate_trees
 from src.analysis import extremal_wiener
 
 from src.visualization import draw_graph
+import pandas as pd
 
 trees = generate_trees(10)
 
@@ -33,3 +34,22 @@ draw_graph(
     result["min_tree"],
     title="Minimum Wiener Index Tree"
 )
+
+data = [
+    {
+        "Type": "Maximum Wiener Tree",
+        "Value": result["max_value"],
+        "Edges": list(result["max_tree"].edges())
+    },
+    {
+        "Type": "Minimum Wiener Tree",
+        "Value": result["min_value"],
+        "Edges": list(result["min_tree"].edges())
+    }
+]
+
+df = pd.DataFrame(data)
+
+df.to_csv("wiener_results.csv", index=False)
+
+print("Results saved to wiener_results.csv")
