@@ -4,12 +4,12 @@ import networkx as nx
 
 def draw_graph(G, title="Graph"):
 
-    plt.figure(figsize=(5, 5))
-
+    plt.figure(figsize=(10, 10))
     pos = nx.spring_layout(G)
+    
 
     nx.draw(
-        G,
+        G, 
         pos,
         with_labels=True,
         node_size=700

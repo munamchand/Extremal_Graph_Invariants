@@ -4,7 +4,7 @@ from src.analysis import extremal_wiener
 
 from src.visualization import draw_graph
 
-trees = generate_trees(5)
+trees = generate_trees(10)
 
 result = extremal_wiener(trees)
 
