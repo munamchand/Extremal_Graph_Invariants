@@ -1,7 +1,7 @@
 import pandas as pd
-from generator import generate_trees
-from analysis import extremal_invariant
-from invariants import (
+from src.generator import generate_trees
+from src.analysis import extremal_invariant
+from src.invariants import (
     wiener_index,
     sombor_index,
     zagreb_index
