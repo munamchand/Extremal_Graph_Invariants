@@ -1,4 +1,5 @@
 from src.experiments import run_experiment
+from src.visualition import draw_graph
 import os
 
 os.makedirs("outputs/csv", exist_ok=True)
@@ -19,6 +20,16 @@ def main():
 if __name__ == "__main__":
     main()
 
+# Draw Graphs
+result = run_experiment(range(3, 11))
+
+trees = generate_trees(10)
+
+draw_graph(
+    trees[0],
+    "Example Tree",
+    "outputs/figures/example.png"
+)
 
 
 
