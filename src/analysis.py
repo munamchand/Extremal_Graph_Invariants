@@ -1,32 +1,25 @@
-from src.invariants import (
-    wiener_index,
-    sombor_index,
-    zagreb_index
-)
 
-def extremal_wiener(trees):
-
+def extremal_invariant(trees, invariant_fn):
     max_tree = None
     min_tree = None
 
-    max_value = float('-inf')
-    min_value = float('inf')
+    max_value = float("-inf")
+    min_value = float("inf")
 
-    for tree in trees:
+    for T in trees:
+        value = invariant_fn(T)
 
-        w = wiener_index(tree)
+        if value > max_value:
+            max_value = value
+            max_tree = T
 
-        if w > max_value:
-            max_value = w
-            max_tree = tree
-
-        if w < min_value:
-            min_value = w
-            min_tree = tree
+        if value < min_value:
+            min_value = value
+            min_tree = T
 
     return {
         "max_tree": max_tree,
-        "max_value": max_value,
         "min_tree": min_tree,
+        "max_value": max_value,
         "min_value": min_value
     }
