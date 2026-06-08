@@ -1,110 +1,88 @@
-# 📘 Extremal Graph Invariants on Trees
+# 📘 Extremal Analysis of Graph Invariants on Trees
 
-A computational research project for studying **Wiener, Sombor, and Zagreb indices** on tree graphs across different orders \( n \).  
-The project performs **systematic extremal analysis (maximum and minimum values)** and generates both numerical and visual results.
+This project performs computational analysis of classical and degree-based graph invariants on trees, focusing on their **extremal behavior (maximum and minimum values)** across different graph orders.
 
----
-
-# 📌 Research Objective
-
-For each tree order \( n $$\in$$ [3, 10] \), the system:
-
-- Generates all non-isomorphic trees
-- Computes graph invariants:
-  - Wiener index
-  - Sombor index
-  - Zagreb index
-- Finds:
-  - Maximum invariant tree
-  - Minimum invariant tree
-- Stores results in structured datasets
-- Visualizes both:
-  - Growth trends (line plots)
-  - Tree structures (NetworkX graphs)
+The main goal is to study how different invariants behave structurally and whether they induce similar or contrasting extremal tree configurations.
 
 ---
 
-# 📐 Mathematical Definitions
+# 📌 Graph Invariants Studied
 
-## Wiener Index
+## 1. Wiener Index
+Measures total distance between all pairs of vertices:
 
-$$
+\[
 W(G) = \sum_{u,v \in V(G)} d(u,v)
-$$
+\]
 
 ---
 
-## First Zagreb Index
+## 2. Sombor Index
+A degree-based topological index:
 
-$$
-M_1(G) = \sum_{v \in V(G)} d(v)^2
-$$
-
----
-
-## Sombor Index
-
-$$
+\[
 SO(G) = \sum_{uv \in E(G)} \sqrt{d(u)^2 + d(v)^2}
-$$
+\]
 
 ---
 
-## Second Zagreb Index
+## 3. Zagreb Index (First/Second variants implemented)
 
-$$
-M_2(G) = \sum_{uv \in E(G)} d(u)d(v)
-$$
+Degree-based structural indices used in chemical graph theory.
+
+---
+
+# ⚙️ Methodology
+
+For each number of vertices \( n \in [3, 10] \):
+
+1. Generate all non-isomorphic trees
+2. Compute:
+   - Wiener index
+   - Sombor index
+   - Zagreb index
+3. Identify:
+   - Maximum value tree
+   - Minimum value tree
+4. Store results in structured dataset
+5. Visualize:
+   - Extremal trees
+   - Growth trends
 
 ---
 
 # 🏗️ Project Structure
 
 ```text
-Sombor_Index_calculator/
+Sombor_Index_Calculator/
 │
 ├── main.py
+│
 ├── src/
-│   ├── generator.py
-│   ├── invariants.py
-│   ├── analysis.py
-│   ├── experiments.py
-│   ├── visualization.py
+│   ├── generator.py          # Tree generation
+│   ├── invariants.py         # Graph invariants
+│   ├── analysis.py           # Extremal analysis
+│   ├── experiments.py        # Multi-n pipeline
+│   ├── visualization.py      # Graph drawing
 │
 ├── outputs/
 │   ├── csv/
 │   │   └── invariant_growth.csv
 │   └── figures/
-│       ├── wiener_growth.png
-│       ├── sombor_growth.png
-│       ├── zagreb_growth.png
-│       ├── wiener_max_n*.png
-│       ├── wiener_min_n*.png
-│       ├── sombor_max_n*.png
-│       ├── sombor_min_n*.png
-│       ├── zagreb_max_n*.png
-│       └── zagreb_min_n*.png
+│       ├── wiener_*_n*.png
+│       ├── sombor_*_n*.png
+│       ├── zagreb_*_n*.png
 ```
 
 ---
 
-# ⚙️ Workflow Pipeline
+# 📊 Experimental Outputs
 
-1. Generate trees for each \( n \)
-2. Compute invariants for all trees
-3. Extract extremal (max/min) trees
-4. Store numerical results in CSV
-5. Plot growth curves (n vs invariant values)
-6. Visualize extremal tree structures
+## 1. Numerical Results (CSV)
 
----
+Stored in:
 
-# 📊 Outputs
-
-## 1. CSV Table
-
-File:
-```text
+```
 outputs/csv/invariant_growth.csv
 ```
 
@@ -114,33 +92,56 @@ Contains:
 
 ---
 
-## 2. Growth Curves
+## 2. Tree Visualizations
 
-Generated plots:
+For each \( n \), extremal trees are saved:
 
-- Wiener index vs n
-- Sombor index vs n
-- Zagreb index vs n
+- Wiener max/min trees
+- Sombor max/min trees
+- Zagreb max/min trees
 
 Saved in:
 
-```text
+```
 outputs/figures/
 ```
 
 ---
 
-## 3. Tree Visualizations
+## 3. Growth Curves
 
-For each \( n \):
+Plots show how each invariant evolves with increasing \( n \).
 
-- Maximum and minimum trees for each invariant
+---
 
-Saved as:
+# 📈 Key Computational Observation
 
-```text
-outputs/figures/*_n*.png
-```
+Based on computed results for \( n = 3 \) to \( n = 10 \):
+
+## 1. Sombor and Zagreb Indices
+- Their extremal trees (maximum and minimum) are observed to coincide for all tested values of \( n \).
+- This suggests strong structural similarity in how these degree-based indices optimize tree configurations.
+
+⚠️ This is an experimental observation and may not hold for larger \( n \).
+
+---
+
+## 2. Wiener Index
+- Displays contrasting extremal behavior compared to Sombor and Zagreb indices.
+- Observed pattern:
+  - Maximum Wiener index corresponds to path-like structures
+  - Minimum Wiener index corresponds to star-like structures
+
+---
+
+## 3. Structural Contrast
+A consistent pattern is observed:
+
+- Degree-based indices (Sombor, Zagreb):
+  → favor highly centralized or similar structural configurations
+
+- Distance-based index (Wiener):
+  → exhibits opposite structural extremal behavior
 
 ---
 
@@ -152,7 +153,7 @@ python main.py
 
 ---
 
-# 📦 Dependencies
+# 📦 Requirements
 
 ```bash
 pip install networkx matplotlib pandas
@@ -160,74 +161,32 @@ pip install networkx matplotlib pandas
 
 ---
 
-# 📈 Research Contribution
+# 🔬 Scientific Contribution
 
-This project enables:
+This project provides a computational framework for:
 
-- Comparative study of graph invariants
-- Extremal tree structure identification
-- Growth behavior analysis over increasing graph order
-- Visualization of structural differences across invariants
-
----
-# 📊 Observed Extremal Behavior (Computational Results)
-
-For the tested range \( n = 3 \) to \( n = 10 \), the following structural patterns were observed:
-
-## 1. Sombor and Zagreb Indices
-
-- The extremal trees (maximum and minimum) for Sombor and Zagreb indices were observed to coincide for all tested values of \( n \).
-- In particular:
-  - The same tree structures frequently achieve both maxima
-  - The same tree structures frequently achieve both minima
-
-⚠️ This observation is experimental and limited to the tested range.
+- Comparing distance-based vs degree-based invariants
+- Identifying extremal tree structures
+- Studying structural consistency across invariants
+- Exploring potential phase-transition-like behavior in extremal graphs
 
 ---
 
-## 2. Wiener Index
-
-- The Wiener index shows an opposite extremal behavior compared to Sombor and Zagreb indices.
-- In the observed range:
-  - Trees that maximize Wiener index tend to be path-like structures
-  - Trees that minimize Wiener index tend to be star-like structures
-
----
-
-## 3. Structural Contrast
-
-A consistent pattern was observed:
-
-- Sombor / Zagreb:
-  - Extremal structures favor highly centralized configurations (star-like behavior in maxima)
-
-- Wiener:
-  - Extremal structures exhibit inverse behavior relative to the above indices
-
----
-
-## 4. Interpretation
-
-These results suggest that different graph invariants may induce:
-- similar extremal structure selection (Sombor vs Zagreb)
-- contrasting structural optimization criteria (Wiener vs others)
-
-Further investigation is required for larger \( n \) and additional invariants.
----
 # 🔭 Future Work
 
-- Add ABC, Randic, Harary indices
-- Study asymptotic extremal behavior
-- Detect structural phase transitions
-- Apply ML models to predict invariants
-- Extend to chemical graph theory datasets
+- Extend to larger \( n \)
+- Add additional indices (Randić, ABC, harmonic index)
+- Automate structural isomorphism comparison of extremal trees
+- Statistical correlation analysis between invariants
+- Investigate asymptotic extremal behavior
 
 ---
 
 # 👨‍💻 Purpose
 
-This repository is designed as a **computational graph theory framework** suitable for:
+This repository is designed as a **computational graph theory research project**, suitable for:
 
-- Research exploration
-- Experimental combinatorics
-- Chemical graph theory modeling
+- PhD applications
+- Algorithmic graph theory research
+- Chemical graph theory exploration
+- Experimental combinatorics studies
