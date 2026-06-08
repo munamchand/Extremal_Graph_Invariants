@@ -1,6 +1,6 @@
 # 📘 Extremal Analysis of Graph Invariants on Trees
 
-This project performs computational analysis of classical and degree-based graph invariants on trees, focusing on their **extremal behavior (maximum and minimum values)** across different graph orders.
+This project performs computational analysis of distance-based and degree-based graph invariants on trees, focusing on their **extremal behavior (maximum and minimum values)** across different graph orders.
 
 The main goal is to study how different invariants behave structurally and whether they induce similar or contrasting extremal tree configurations.
 
@@ -11,18 +11,18 @@ The main goal is to study how different invariants behave structurally and wheth
 ## 1. Wiener Index
 Measures total distance between all pairs of vertices:
 
-\[
+$$\[
 W(G) = \sum_{u,v \in V(G)} d(u,v)
-\]
+\]$$
 
 ---
 
 ## 2. Sombor Index
 A degree-based topological index:
 
-\[
+$$\[
 SO(G) = \sum_{uv \in E(G)} \sqrt{d(u)^2 + d(v)^2}
-\]
+\]$$
 
 ---
 
@@ -110,13 +110,13 @@ outputs/figures/
 
 ## 3. Growth Curves
 
-Plots show how each invariant evolves with increasing \( n \).
+Plots show how each invariant evolves with increasing $\( n \)$.
 
 ---
 
 # 📈 Key Computational Observation
 
-Based on computed results for \( n = 3 \) to \( n = 10 \):
+Based on computed results for $\( n = 3 \)$ to $\( n = 10 \)$:
 
 ## 1. Sombor and Zagreb Indices
 - Their extremal trees (maximum and minimum) are observed to coincide for all tested values of \( n \).
@@ -134,18 +134,7 @@ Based on computed results for \( n = 3 \) to \( n = 10 \):
 
 ---
 
-## 3. Structural Contrast
-A consistent pattern is observed:
-
-- Degree-based indices (Sombor, Zagreb):
-  → favor highly centralized or similar structural configurations
-
-- Distance-based index (Wiener):
-  → exhibits opposite structural extremal behavior
-
----
-
-# 🚀 How to Run
+#  How to Run
 
 ```bash
 python main.py
@@ -153,7 +142,7 @@ python main.py
 
 ---
 
-# 📦 Requirements
+#  Requirements
 
 ```bash
 pip install networkx matplotlib pandas
@@ -161,18 +150,18 @@ pip install networkx matplotlib pandas
 
 ---
 
-# 🔬 Scientific Contribution
+#  Scientific Contribution
 
-This project provides a computational framework for:
-
-- Comparing distance-based vs degree-based invariants
-- Identifying extremal tree structures
-- Studying structural consistency across invariants
-- Exploring potential phase-transition-like behavior in extremal graphs
-
+- Developed a computational framework for analyzing graph invariants on trees across varying orders \( n \).
+- Studied extremal behavior (maximum and minimum values) of Wiener, Sombor, and Zagreb indices.
+- Compared structural differences between distance-based (Wiener) and degree-based (Sombor, Zagreb) invariants.
+- Identified consistent similarity between extremal structures of Sombor and Zagreb indices in the tested range.
+- Observed contrasting extremal behavior of the Wiener index relative to degree-based indices.
+- Generated reproducible pipeline for tree generation, invariant computation, extremal detection, and visualization.
+- Provided empirical insights into structural patterns of extremal trees for small to moderate \( n \).
 ---
 
-# 🔭 Future Work
+#  Future Work
 
 - Extend to larger \( n \)
 - Add additional indices (Randić, ABC, harmonic index)
@@ -182,11 +171,10 @@ This project provides a computational framework for:
 
 ---
 
-# 👨‍💻 Purpose
+#  Purpose
 
 This repository is designed as a **computational graph theory research project**, suitable for:
 
-- PhD applications
-- Algorithmic graph theory research
 - Chemical graph theory exploration
 - Experimental combinatorics studies
+- Algorithmic graph theory research
