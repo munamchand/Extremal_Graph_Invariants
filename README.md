@@ -6,7 +6,7 @@ The main goal is to study how different invariants behave structurally and wheth
 
 ---
 
-# 📌 Graph Invariants Studied
+#  Graph Invariants Studied
 
 ## 1. Wiener Index
 Measures total distance between all pairs of vertices:
@@ -32,9 +32,9 @@ Degree-based structural indices used in chemical graph theory.
 
 ---
 
-# ⚙️ Methodology
+# Methodology
 
-For each number of vertices \( n \in [3, 10] \):
+For each number of vertices $\( n \in [3, 10] \)$:
 
 1. Generate all non-isomorphic trees
 2. Compute:
@@ -51,7 +51,7 @@ For each number of vertices \( n \in [3, 10] \):
 
 ---
 
-# 🏗️ Project Structure
+#  Project Structure
 
 ```text
 Sombor_Index_Calculator/
@@ -76,7 +76,7 @@ Sombor_Index_Calculator/
 
 ---
 
-# 📊 Experimental Outputs
+#  Experimental Outputs
 
 ## 1. Numerical Results (CSV)
 
@@ -114,7 +114,7 @@ Plots show how each invariant evolves with increasing $\( n \)$.
 
 ---
 
-# 📈 Key Computational Observation
+#  Key Computational Observation
 
 Based on computed results for $\( n = 3 \)$ to $\( n = 10 \)$:
 
