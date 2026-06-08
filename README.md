@@ -11,9 +11,9 @@ The main goal is to study how different invariants behave structurally and wheth
 ## 1. Wiener Index
 Measures total distance between all pairs of vertices:
 
-$$\[
+$$
 W(G) = \sum_{u,v \in V(G)} d(u,v)
-\]$$
+$$
 
 ---
 
@@ -34,7 +34,7 @@ Degree-based structural indices used in chemical graph theory.
 
 # Methodology
 
-For each number of vertices $(n \in [3, 10])$:
+For each number of vertices $$ n \in [3, 10] $$:
 
 1. Generate all non-isomorphic trees
 2. Compute:
