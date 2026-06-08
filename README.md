@@ -20,9 +20,9 @@ W(G) = \sum_{u,v \in V(G)} d(u,v)
 ## 2. Sombor Index
 A degree-based topological index:
 
-$$\[
+$$
 SO(G) = \sum_{uv \in E(G)} \sqrt{d(u)^2 + d(v)^2}
-\]$$
+$$
 
 ---
 
