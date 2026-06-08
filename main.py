@@ -14,5 +14,5 @@ for n in n_values:
     draw_full_page(
         n,
         trees[n],
-        f"outputs/figures/full_page_n{n}.png"
+        f"outputs/figures/summary_n{n}.png"
     )
