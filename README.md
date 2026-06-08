@@ -34,7 +34,7 @@ Degree-based structural indices used in chemical graph theory.
 
 # Methodology
 
-For each number of vertices $ n \in [3, 10] $:
+For each number of vertices $(n \in [3, 10])$:
 
 1. Generate all non-isomorphic trees
 2. Compute:
