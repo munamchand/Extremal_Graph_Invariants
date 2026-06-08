@@ -170,7 +170,50 @@ This project enables:
 - Visualization of structural differences across invariants
 
 ---
+# 📊 Observed Extremal Behavior (Computational Results)
 
+For the tested range \( n = 3 \) to \( n = 10 \), the following structural patterns were observed:
+
+## 1. Sombor and Zagreb Indices
+
+- The extremal trees (maximum and minimum) for Sombor and Zagreb indices were observed to coincide for all tested values of \( n \).
+- In particular:
+  - The same tree structures frequently achieve both maxima
+  - The same tree structures frequently achieve both minima
+
+⚠️ This observation is experimental and limited to the tested range.
+
+---
+
+## 2. Wiener Index
+
+- The Wiener index shows an opposite extremal behavior compared to Sombor and Zagreb indices.
+- In the observed range:
+  - Trees that maximize Wiener index tend to be path-like structures
+  - Trees that minimize Wiener index tend to be star-like structures
+
+---
+
+## 3. Structural Contrast
+
+A consistent pattern was observed:
+
+- Sombor / Zagreb:
+  - Extremal structures favor highly centralized configurations (star-like behavior in maxima)
+
+- Wiener:
+  - Extremal structures exhibit inverse behavior relative to the above indices
+
+---
+
+## 4. Interpretation
+
+These results suggest that different graph invariants may induce:
+- similar extremal structure selection (Sombor vs Zagreb)
+- contrasting structural optimization criteria (Wiener vs others)
+
+Further investigation is required for larger \( n \) and additional invariants.
+---
 # 🔭 Future Work
 
 - Add ABC, Randic, Harary indices
