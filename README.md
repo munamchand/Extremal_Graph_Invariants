@@ -171,10 +171,3 @@ pip install networkx matplotlib pandas
 
 ---
 
-#  Purpose
-
-This repository is designed as a **computational graph theory research project**, suitable for:
-
-- Chemical graph theory exploration
-- Experimental combinatorics studies
-- Algorithmic graph theory research
